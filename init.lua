@@ -5,12 +5,12 @@
 minetest.register_node("bac:bac_box", {
 	description = "Bac_box",
 	tiles = {
-		"compass_0.png",
-		"technic_checkmark_icon.png",
-		"diplazer_grav.png",
+		"gem.png",
+		"check.png",
+		"modern_tower.png",
 		"front.jpg",
-		"heart.png",
-		"gold.png"
+		"dim.png",
+		"tron_cube.png"
 	},
   light_source = 10,
 	groups = {cracky=3},
@@ -85,10 +85,10 @@ recipe = {
 
 minetest.register_tool("bac:bac_final", {
 	description = "Bac final",
-	after_use = function()
-		minetest.sound_play("photon_gun_shot")
-	end,
 	inventory_image = "bac_final.png",
+	after_use = function(itemstack, user, pointed_thing)
+	 itemstack:add_wear(20)
+ end,
 	tool_capabilities = {
 		max_drop_level=99,
 		groupcaps={
@@ -112,9 +112,6 @@ recipe = {
 
 minetest.register_craftitem("bac:edible", {
 	description = "Bac Edible",
-	after_use = function()
-      minetest.sound_play("crunch")
-	end,
 	inventory_image = "bac_edible.png",
 	on_use = minetest.item_eat(90),
 })
