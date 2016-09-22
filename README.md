@@ -43,10 +43,10 @@ b=bac_pick_upgraded m=mese_crystal e=empty
 bac_edible (furnace)
 
 f=fuel b=bac_final e=empty
-
+```
   (b)  (e)
-  (f),
-
+  (f)
+```
 bac_laser (craft)
 
 b=bac_edible d=diamond m=mese_crystal e=empty
