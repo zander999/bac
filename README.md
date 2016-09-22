@@ -4,9 +4,12 @@ This is my first public mod
 
 ## What it does
 
-It adds 1 node, 4 tools and 1 bit of food. The one node is called a bac box it is a cube with the top off (the is middle holow).
-The 4 tools are for minning 2 of them are also for other use. The minning tools are bac_pick, bac_pick_upgraded, bac_final and bac_laser.
+It adds 1 node, 4 tools and 1 bit of food. The one node is called a bac box it is a cube with the top off (the is middle hollow).
+
+The 4 tools are for mining 2 of them are also for other use. The mining tools are bac_pick, bac_pick_upgraded, bac_final and bac_laser.
+
 The 2 other use tools are bac_final and bac_laser they act as a pickaxe, shovel, sword and a axe.
+
 the 1 bit of food is a bac_edible you can eat it.
 
 ## How to install
