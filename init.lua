@@ -171,7 +171,7 @@ minetest.register_abm({
 minetest.register_abm({
 	nodenames = {"bac:bac_box"},
 	neighbors = {"default:lava_source", "default:lava_flowing"},
-	interval = 1.0,
+	interval = 1.3,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name = "default:diamond"})
@@ -191,7 +191,7 @@ minetest.register_abm({
 minetest.register_abm({
 	nodenames = {"bac:bac_box"},
 	neighbors = {"default:gold_ore"},
-	interval = 1.0,
+	interval = 1.1,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name = "default:gold"})
