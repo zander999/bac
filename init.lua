@@ -27,15 +27,15 @@ minetest.register_node("bac:bac_box", {
 		}
 	}
 });
-minetest.register_craft({
-output = "bac:bac_box",
-recipe = {
-{"default:mese_crystal", "default:diamond", "default:mese_crystal"},
-{"default:stone", "default:chest", "default:stone"},
-{"default:stone", "default:stone", "default:stone"},
-}
-})
 
+minetest.register_craft({
+	output = "bac:bac_box",
+	recipe = {
+		{"default:mese_crystal", "default:diamond", "default:mese_crystal"},
+		{"default:stone", "default:chest", "default:stone"},
+		{"default:stone", "default:stone", "default:stone"},
+	}
+})
 
 minetest.register_tool("bac:bac_pick", {
     description = "Bac_Pick",
@@ -50,45 +50,53 @@ minetest.register_tool("bac:bac_pick", {
         }
     }
 });
-minetest.register_craft({
-output = "bac:bac_pick",
-recipe = {
-{"bac:bac_box", "bac:bac_box", "bac:bac_box"},
-{"", "default:stick", ""},
-{"", "default:stick", ""},
-}
-})
 
+minetest.register_craft({
+	output = "bac:bac_pick",
+	recipe = {
+		{"bac:bac_box", "bac:bac_box", "bac:bac_box"},
+		{"", "default:stick", ""},
+		{"", "default:stick", ""},
+	}
+})
 
 minetest.register_tool("bac:bac_pick_upgraded", {
     description = "Bac_Pick_upgraded",
     inventory_image = "bac_pick_upgraded.png",
-		after_use = function(itemstack, user, pointed_thing)
-		 itemstack:add_wear(200)
-	 end,
+	after_use = function(itemstack, user, pointed_thing)
+		itemstack:add_wear(200)
+	end,
     tool_capabilities = {
-        max_drop_level=99,
-        groupcaps= {
-            cracky={times={[1]=0.50, [2]=1.00, [3]=1.50}, uses=99, maxlevel=99}
+        max_drop_level = 99,
+        groupcaps = {
+            cracky = {
+				times = {
+					[1]=0.50,
+				 	[2]=1.00,
+					[3]=1.50
+				},
+				uses=99, 
+				maxlevel=99
+			}
         }
     }
 });
-minetest.register_craft({
-output = "bac:bac_pick_upgraded",
-recipe = {
-{"", "default:mese_crystal", ""},
-{"", "bac:bac_pick", ""},
-{"", "", ""},
-}
-})
 
+minetest.register_craft({
+	output = "bac:bac_pick_upgraded",
+	recipe = {
+		{"", "default:mese_crystal", ""},
+		{"", "bac:bac_pick", ""},
+		{"", "", ""},
+	}
+})
 
 minetest.register_tool("bac:bac_final", {
 	description = "Bac final",
 	inventory_image = "bac_final.png",
 	after_use = function(itemstack, user, pointed_thing)
-	 itemstack:add_wear(20)
- end,
+		itemstack:add_wear(20)
+ 	end,
 	tool_capabilities = {
 		max_drop_level=99,
 		groupcaps={
@@ -100,13 +108,14 @@ minetest.register_tool("bac:bac_final", {
 		damage_groups = {fleshy=30}
 	},
 })
+
 minetest.register_craft({
-output = "bac:bac_final",
-recipe = {
-{"", "default:mese_crystal", ""},
-{"", "bac:bac_pick_upgraded", ""},
-{"", "", ""},
-}
+	output = "bac:bac_final",
+	recipe = {
+		{"", "default:mese_crystal", ""},
+		{"", "bac:bac_pick_upgraded", ""},
+		{"", "", ""},
+	}
 })
 
 
@@ -115,12 +124,12 @@ minetest.register_craftitem("bac:edible", {
 	inventory_image = "bac_edible.png",
 	on_use = minetest.item_eat(90),
 })
+
 minetest.register_craft({
 	type = "cooking",
 	output = "bac:edible",
 	recipe = "bac:bac_final",
 })
-
 
 minetest.register_tool("bac:bac_laser", {
 	description = "Bac laser",
@@ -139,13 +148,14 @@ minetest.register_tool("bac:bac_laser", {
 		damage_groups = {fleshy=99}
 	},
 })
+
 minetest.register_craft({
-output = "bac:bac_laser",
-recipe = {
-{"", "default:mese_crystal", ""},
-{"", "bac:edible", ""},
-{"", "default:diamond", ""},
-}
+	output = "bac:bac_laser",
+	recipe = {
+		{"", "default:mese_crystal", ""},
+		{"", "bac:edible", ""},
+		{"", "default:diamond", ""},
+	}
 })
 
 minetest.register_abm({
