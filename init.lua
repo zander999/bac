@@ -177,3 +177,13 @@ minetest.register_abm({
 		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name = "default:diamond"})
 	end
 })
+
+minetest.register_abm({
+	nodenames = {"bac:bac_box"},
+	neighbors = {"default:dirt_with_grass"},
+	interval = 1.0,
+	chance = 1,
+	action = function(pos, node, active_object_count, active_object_count_wider)
+		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name = "default:tree"})
+	end
+})
